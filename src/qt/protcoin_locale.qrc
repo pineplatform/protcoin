@@ -1,0 +1,29 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/protcoin_bg.qm</file>
+        <file alias="ca">locale/protcoin_ca.qm</file>
+        <file alias="cs">locale/protcoin_cs.qm</file>
+        <file alias="da">locale/protcoin_da.qm</file>
+        <file alias="de">locale/protcoin_de.qm</file>
+        <file alias="en">locale/protcoin_en.qm</file>
+        <file alias="en_US">locale/protcoin_en_US.qm</file>
+        <file alias="es">locale/protcoin_es.qm</file>
+        <file alias="fi">locale/protcoin_fi.qm</file>
+        <file alias="fr_FR">locale/protcoin_fr_FR.qm</file>
+        <file alias="it">locale/protcoin_it.qm</file>
+        <file alias="ja">locale/protcoin_ja.qm</file>
+        <file alias="ko_KR">locale/protcoin_ko_KR.qm</file>
+        <file alias="nl">locale/protcoin_nl.qm</file>
+        <file alias="pl">locale/protcoin_pl.qm</file>
+        <file alias="pt">locale/protcoin_pt.qm</file>
+        <file alias="pt_BR">locale/protcoin_pt_BR.qm</file>
+        <file alias="ro_RO">locale/protcoin_ro_RO.qm</file>
+        <file alias="ru">locale/protcoin_ru.qm</file>
+        <file alias="sk">locale/protcoin_sk.qm</file>
+        <file alias="sv">locale/protcoin_sv.qm</file>
+        <file alias="tr">locale/protcoin_tr.qm</file>
+        <file alias="uk">locale/protcoin_uk.qm</file>
+        <file alias="zh_CN">locale/protcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/protcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

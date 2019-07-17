@@ -1,0 +1,26 @@
+# /etc/conf.d/protcoind: config file for /etc/init.d/protcoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/protcoin/protcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/protcoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/protcoind.pid"
+
+# Where to write protcoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/protcoind"
+
+# User and group to own protcoind process
+#BITCOIND_USER="protcoin"
+#BITCOIND_GROUP="protcoin"
+
+# Path to protcoind executable
+#BITCOIND_BIN="/usr/bin/protcoind"
+
+# Nice value to run protcoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

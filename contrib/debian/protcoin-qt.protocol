@@ -1,0 +1,11 @@
+[Protocol]
+exec=protcoin-qt '%u'
+protocol=protcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

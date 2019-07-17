@@ -1,0 +1,26 @@
+[Unit]
+Description=Protcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=protcoin
+Group=protcoin
+
+Type=forking
+PIDFile=/var/lib/protcoind/protcoind.pid
+
+ExecStart=/usr/bin/protcoind -daemon -pid=/var/lib/protcoind/protcoind.pid \
+          -conf=/etc/protcoin/protcoin.conf -datadir=/var/lib/protcoind
+
+ExecStop=-/usr/bin/protcoin-cli -conf=/etc/protcoin/protcoin.conf \
+         -datadir=/var/lib/protcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
