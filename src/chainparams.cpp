@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000007903a6b9d4c08db60f9fb0bf2cb27741c233de67c70aa7cad64e58c589b"));
+    (0, uint256("0x0000098a1227fb47b145e2d2ec0af494856977c0a3f1bd25643f6a43384e7822"));
     //(500, uint256("00000056fef1c070facfef7097b8a527615d8145a5d2767621ccabbeeea42978"));
 
 static const Checkpoints::CCheckpointData data = {
@@ -101,7 +101,7 @@ public:
         pchMessageStart[2]             = 0x3e;
         pchMessageStart[3]             = 0xf9;
         vAlertPubKey                   = ParseHex("04f529002e0f5f23bc34e12bbd82f398189b55b1658e419ddc8711f60401fcd999a772ac5bc2ec4e9c5049c08f37d6a84e9c52fb574c556b0e122a5b7a8bee81dc");
-        nDefaultPort                   = 30009;
+        nDefaultPort                   = 30111;
         nSubsidyHalvingInterval        = 1050000;
         nMaxReorganizationDepth        = 100;
         nEnforceBlockUpgradeMajority   = 750;
@@ -136,10 +136,10 @@ public:
         genesis.hashPrevBlock          = 0;
         genesis.hashMerkleRoot         = genesis.BuildMerkleTree();
         genesis.nVersion               = 1;
-        genesis.nTime                  = 1563422000;
+        genesis.nTime                  = 1563433670;
         //genesis.nTime                  = 1563283002;
         genesis.nBits                  = 0x1e0ffff0;
-        genesis.nNonce                 = 20590866;
+        genesis.nNonce                 = 21292297;
         //genesis.nNonce                 = 22656502;
 
 
@@ -148,7 +148,7 @@ public:
         //printf("hash : %s\n", hashGenesisBlock.ToString().c_str());
         //printf("merkle : %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-        assert(hashGenesisBlock        == uint256("0x000007903a6b9d4c08db60f9fb0bf2cb27741c233de67c70aa7cad64e58c589b"));
+        assert(hashGenesisBlock        == uint256("0x0000098a1227fb47b145e2d2ec0af494856977c0a3f1bd25643f6a43384e7822"));
         assert(genesis.hashMerkleRoot  == uint256("0xce3ced2e976f54f3a2973db0f7d78879bd430406ed6b0bde8e01c0d659003257"));
 
         //assert(hashGenesisBlock        == uint256("0x00000f10f816b04901735f3d2074d6e0e31fec05e2405c74ec7da52017d69d6c"));
