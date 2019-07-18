@@ -54,13 +54,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000000cd23925adf88cc777606e2af9aaadbb96d3b8d2444577ee3f3351b8fb3"));
+    (0, uint256("0x000008f85a45864b7db094c546e637e407a2da30dfb1db122e42c17b120eb884"));
     //(500, uint256("00000056fef1c070facfef7097b8a527615d8145a5d2767621ccabbeeea42978"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1555849325, // * UNIX timestamp of last checkpoint block
-    135598,     // * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
+    1563474241, // * UNIX timestamp of last checkpoint block
+    0,     // * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
     1440        // * estimated number of transactions per day after checkpoint
 };
 
@@ -119,10 +119,10 @@ public:
 
         nMaturity                      = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift          = 20;
-        nMaxMoneyOut                   = 30000000 * COIN;
+        nMaxMoneyOut                   = 99000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock                  = 100;
+        nLastPOWBlock                  = 80;
         nModifierUpdateBlock           = 1;
 
         const char* pszTimestamp       = "prot project prot coin developer";
@@ -136,10 +136,10 @@ public:
         genesis.hashPrevBlock          = 0;
         genesis.hashMerkleRoot         = genesis.BuildMerkleTree();
         genesis.nVersion               = 1;
-        genesis.nTime                  = 1563455946;
+        genesis.nTime                  = 1563474241;
         //genesis.nTime                  = 1563283002;
         genesis.nBits                  = 0x1e0ffff0;
-        genesis.nNonce                 = 21365600;
+        genesis.nNonce                 = 20652637;
         //genesis.nNonce                 = 22656502;
 
 
@@ -148,7 +148,7 @@ public:
         //printf("hash : %s\n", hashGenesisBlock.ToString().c_str());
         //printf("merkle : %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-        assert(hashGenesisBlock        == uint256("0x000000cd23925adf88cc777606e2af9aaadbb96d3b8d2444577ee3f3351b8fb3"));
+        assert(hashGenesisBlock        == uint256("0x000008f85a45864b7db094c546e637e407a2da30dfb1db122e42c17b120eb884"));
         assert(genesis.hashMerkleRoot  == uint256("0xce3ced2e976f54f3a2973db0f7d78879bd430406ed6b0bde8e01c0d659003257"));
 
         //assert(hashGenesisBlock        == uint256("0x00000f10f816b04901735f3d2074d6e0e31fec05e2405c74ec7da52017d69d6c"));
@@ -195,7 +195,7 @@ public:
 
         nBudget_Fee_Confirmations      = 6; // Number of confirmations for the finalization fee
 
-        strTreasuryAddress             = "PTaMGFdvcrYuttwZKBCTbSjRQsGxeJ5XWS";
+        strTreasuryAddress             = "PBUfnAqhBQac3NwC6V5uVG6YbV6QQKaatn";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
