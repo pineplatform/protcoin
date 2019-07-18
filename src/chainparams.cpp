@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000098a1227fb47b145e2d2ec0af494856977c0a3f1bd25643f6a43384e7822"));
+    (0, uint256("0x000000cd23925adf88cc777606e2af9aaadbb96d3b8d2444577ee3f3351b8fb3"));
     //(500, uint256("00000056fef1c070facfef7097b8a527615d8145a5d2767621ccabbeeea42978"));
 
 static const Checkpoints::CCheckpointData data = {
@@ -119,7 +119,7 @@ public:
 
         nMaturity                      = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift          = 20;
-        nMaxMoneyOut                   = 900000000LL * COIN;
+        nMaxMoneyOut                   = 30000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock                  = 100;
@@ -136,10 +136,10 @@ public:
         genesis.hashPrevBlock          = 0;
         genesis.hashMerkleRoot         = genesis.BuildMerkleTree();
         genesis.nVersion               = 1;
-        genesis.nTime                  = 1563433670;
+        genesis.nTime                  = 1563455946;
         //genesis.nTime                  = 1563283002;
         genesis.nBits                  = 0x1e0ffff0;
-        genesis.nNonce                 = 21292297;
+        genesis.nNonce                 = 21365600;
         //genesis.nNonce                 = 22656502;
 
 
@@ -148,7 +148,7 @@ public:
         //printf("hash : %s\n", hashGenesisBlock.ToString().c_str());
         //printf("merkle : %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-        assert(hashGenesisBlock        == uint256("0x0000098a1227fb47b145e2d2ec0af494856977c0a3f1bd25643f6a43384e7822"));
+        assert(hashGenesisBlock        == uint256("0x000000cd23925adf88cc777606e2af9aaadbb96d3b8d2444577ee3f3351b8fb3"));
         assert(genesis.hashMerkleRoot  == uint256("0xce3ced2e976f54f3a2973db0f7d78879bd430406ed6b0bde8e01c0d659003257"));
 
         //assert(hashGenesisBlock        == uint256("0x00000f10f816b04901735f3d2074d6e0e31fec05e2405c74ec7da52017d69d6c"));
@@ -168,8 +168,8 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         vSeeds.push_back(CDNSSeedData("202.182.118.183", "45.77.21.137")); 
-        vSeeds.push_back(CDNSSeedData("45.32.59.207", "149.28.19.37")); 
-        vSeeds.push_back(CDNSSeedData("45.77.183.129", "203.234.105.33")); 
+        vSeeds.push_back(CDNSSeedData("45.32.59.207", "45.77.11.127")); 
+        vSeeds.push_back(CDNSSeedData("45.77.183.129", "45.32.38.151")); 
 
         /*202.182.118.183
 
@@ -191,7 +191,7 @@ public:
         nPoolMaxTransactions           = 3;
         strSporkKey                    = "04a6065e38403a4f95bed7349cdf1a8f10c4f7193ce2f2ad08f8e94f208eb7dd60445bf9d8f34cf1bd51755301260c99ac21d5ea815fe2b4492dc17c41512db8cd";
         strMasternodePoolDummyAddress  = "PDzaDvzEZKuKvMMRRBs6j5hEPwizepJiYx";
-        nStartMasternodePayments       = genesis.nTime + 60 * 60; // 1 hr after genesis
+        nStartMasternodePayments       = genesis.nTime + 60 * 20; // 1 hr after genesis
 
         nBudget_Fee_Confirmations      = 6; // Number of confirmations for the finalization fee
 

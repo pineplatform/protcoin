@@ -995,7 +995,8 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
             if (nProp == 0) {
                 if (pfrom->HasFulfilledRequest("mnvs")) {
                     LogPrint("masternode","mnvs - peer already asked me for the list\n");
-                    Misbehaving(pfrom->GetId(), 20);
+                    //misbehaving 20->n
+                    Misbehaving(pfrom->GetId(), 8);
                     return;
                 }
                 pfrom->FulfilledRequest("mnvs");
@@ -1063,7 +1064,8 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         mapSeenMasternodeBudgetVotes.insert(make_pair(vote.GetHash(), vote));
         if (!vote.SignatureValid(true)) {
             LogPrint("masternode","mvote - signature invalid\n");
-            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 9);
             // it could just be a non-synced masternode
             mnodeman.AskForMN(pfrom, vote.vin);
             return;
@@ -1135,7 +1137,8 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         mapSeenFinalizedBudgetVotes.insert(make_pair(vote.GetHash(), vote));
         if (!vote.SignatureValid(true)) {
             LogPrint("masternode","fbvote - signature invalid\n");
-            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 11);
             // it could just be a non-synced masternode
             mnodeman.AskForMN(pfrom, vote.vin);
             return;

@@ -1740,7 +1740,8 @@ void Misbehaving(NodeId pnode, int howmuch)
         return;
 
     state->nMisbehavior += howmuch;
-    int banscore = GetArg("-banscore", 100);
+    //naelco dft 100->1000
+    int banscore = GetArg("-banscore", 1000);
     if (state->nMisbehavior >= banscore && state->nMisbehavior - howmuch < banscore) {
         LogPrintf("Misbehaving: %s (%d -> %d) BAN THRESHOLD EXCEEDED\n", state->name, state->nMisbehavior - howmuch, state->nMisbehavior);
         state->fShouldBan = true;
@@ -4772,7 +4773,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return true;
         if (vAddr.size() > 1000) {
             LOCK(cs_main);
-            Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            Misbehaving(pfrom->GetId(), 2);
             return error("message addr size() = %u", vAddr.size());
         }
 
@@ -4830,7 +4832,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         vRecv >> vInv;
         if (vInv.size() > MAX_INV_SZ) {
             LOCK(cs_main);
-            Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            Misbehaving(pfrom->GetId(), 3);
             return error("message inv size() = %u", vInv.size());
         }
 
@@ -4877,7 +4880,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         vRecv >> vInv;
         if (vInv.size() > MAX_INV_SZ) {
             LOCK(cs_main);
-            Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            Misbehaving(pfrom->GetId(), 4);
             return error("message getdata size() = %u", vInv.size());
         }
 
@@ -5070,7 +5074,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         unsigned int nCount = ReadCompactSize(vRecv);
         if (nCount > MAX_HEADERS_RESULTS) {
             LOCK(cs_main);
-            Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            Misbehaving(pfrom->GetId(), 6);
             return error("headers message size = %u", nCount);
         }
         headers.resize(nCount);
@@ -5089,7 +5094,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         BOOST_FOREACH (const CBlockHeader& header, headers) {
             CValidationState state;
             if (pindexLast != NULL && header.hashPrevBlock != pindexLast->GetBlockHash()) {
-                Misbehaving(pfrom->GetId(), 20);
+                //misbehaving 20->n
+                Misbehaving(pfrom->GetId(), 7);
                 return error("non-continuous headers sequence");
             }
 

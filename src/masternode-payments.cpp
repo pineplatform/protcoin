@@ -385,7 +385,8 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
         if (Params().NetworkID() == CBaseChainParams::MAIN) {
             if (pfrom->HasFulfilledRequest("mnget")) {
                 LogPrint("masternode","mnget - peer already asked me for the list\n");
-                Misbehaving(pfrom->GetId(), 20);
+                //misbehaving 20->n
+                Misbehaving(pfrom->GetId(), 12);
                 return;
             }
         }
@@ -432,7 +433,8 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
 
         if (!winner.SignatureValid()) {
             // LogPrint("masternode","mnw - invalid signature\n");
-            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 20);
+            //misbehaving 20->n
+            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 13);
             // it could just be a non-synced masternode
             mnodeman.AskForMN(pfrom, winner.vinMasternode);
             return;
