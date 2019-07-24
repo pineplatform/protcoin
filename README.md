@@ -1,7 +1,5 @@
-# PROT_Coin
+# PROT Coin
 [![GitHub version-1.0.0](https://badge.fury.io/gh/pineplatform%2FPROT.svg)](https://badge.fury.io/gh/pineplatform%2FPROT)
-
-=====================================
 
 ##### :globe_with_meridians: https://prot.online/
 
@@ -15,14 +13,13 @@ PROT's Master Node Project breaks away from the existing crytocurrency’s weakn
 <tr><td>Symbol</td><td>PROT</td></tr>
 <tr><td>Block Size</td><td>2MB</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Max Coin Supply </td><td>500000.00 PROT</td></tr>
-<tr><td>Premine</td><td>500,000  PROT</td></tr>
+<tr><td>Premine</td><td>12,000,000  PROT</td></tr>
 </table>
 
 ### Coin Reward Table
 <table>
 <th>Phase</th><th>Block Height</th><th>Reward</th><th>MasterNode,POS REWARD</th><th>Governance RESERVE</th>
-<tr><td>Phase 1</td><td>100-43299</td><td>5 PROT</td><td>4.5 PROT</td><td>0.5 PROT</td></tr>
+<tr><td>Phase 1</td><td>1001-43299</td><td>5 PROT</td><td>4.5 PROT</td><td>0.5 PROT</td></tr>
 <tr><td>Phase 2</td><td>43300-86499</td><td>10 PROT</td><td>9 PROT</td><td>1 PROT</td></tr>
 <tr><td>Phase 3</td><td>86500-129699</td><td>15 PROT</td><td>13.5 PROT</td><td>1.5 PROT</td></tr>
 <tr><td>Phase 4</td><td>129700-172899</td><td>20 PROT</td><td>18 PROT </td><td>2 PROT</td></tr>
