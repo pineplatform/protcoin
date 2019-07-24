@@ -86,6 +86,7 @@ bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
+
 unsigned int nStakeMinAge = 60 * 60;
 int64_t nReserveBalance = 0;
 
@@ -1571,8 +1572,8 @@ int64_t GetBlockValue(int nHeight)
     /* block rewards. */
 
          if (nHeight >=       1 && nHeight <=       1) {nSubsidy = 12000000.00 * COIN;}
-    else if (nHeight >=       2 && nHeight <=   200) {nSubsidy =       0.00 * COIN;}
-    else if (nHeight >=   201 && nHeight <=  43299) {nSubsidy =        5.00 * COIN;}
+    else if (nHeight >=       2 && nHeight <=   1000) {nSubsidy =       1.00 * COIN;}
+    else if (nHeight >=   1001 && nHeight <=  43299) {nSubsidy =        5.00 * COIN;}
     else if (nHeight >=  43300 && nHeight <=  86499) {nSubsidy =        10.00 * COIN;}
     else if (nHeight >=  86500 && nHeight <=  129699) {nSubsidy =       15.00 * COIN;}
     else if (nHeight >= 129700 && nHeight <=  172899) {nSubsidy =       20.00 * COIN;}
@@ -1617,8 +1618,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return nSubsidy;
     }
 
-         if (nHeight >=       1 && nHeight <=   200)  {nSubsidy = 0;}
-    else if (nHeight >=     201 && nHeight <=  16804888)  {nSubsidy = blockValue * 0.80;}
+         if (nHeight >=       1 && nHeight <=   1000)  {nSubsidy = 0;}
+    else if (nHeight >=     1001 && nHeight <=  16804888)  {nSubsidy = blockValue * 0.80;}
 
     return nSubsidy;
 }
@@ -1629,7 +1630,7 @@ int64_t GetTreasuryPayment(int nHeight, int64_t blockValue)
         if (nHeight >= 501 )
             return blockValue * 0.1;
     } else {
-        if (nHeight >= 201 )
+        if (nHeight >= 1001 )
             return blockValue * 0.1;
     }
 
@@ -1740,8 +1741,7 @@ void Misbehaving(NodeId pnode, int howmuch)
         return;
 
     state->nMisbehavior += howmuch;
-    //naelco dft 100->3000
-    int banscore = GetArg("-banscore", 3000);
+    int banscore = GetArg("-banscore", 300);
     if (state->nMisbehavior >= banscore && state->nMisbehavior - howmuch < banscore) {
         LogPrintf("Misbehaving: %s (%d -> %d) BAN THRESHOLD EXCEEDED\n", state->name, state->nMisbehavior - howmuch, state->nMisbehavior);
         state->fShouldBan = true;

@@ -345,7 +345,7 @@ void OverviewPage::SetLinks()
 
     ui->labelLinksUrl1->setText("<a href=\"https://prot.online/\">https://prot.online/</a>");
     ui->labelLinksUrl2->setText("<a href=\"https://prot.online/docs/PROT_whitepaper.pdf\">https://prot.online/docs/PROT_whitepaper.pdf</a>");
-    ui->labelLinksUrl3->setText("<a href=\"https://protblocks.com/\">https://protblocks.com/</a>");
+    ui->labelLinksUrl3->setText("<a href=\"http://protblocks.com/\">http://protblocks.com/</a>");
     ui->labelLinksUrl4->setText("<a href=\"https://discord.gg/xNA9nny\">https://discord.gg/xNA9nny</a>");
     ui->labelLinksUrl5->setText("<a href=\"https://twitter.com/PROTmasternode\">https://twitter.com/PROTmasternode</a>");
     ui->labelLinksUrl6->setText("<a href=\"https://github.com/pineplatform/protcoin\">https://github.com/pineplatform/protcoin</a>");

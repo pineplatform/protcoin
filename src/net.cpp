@@ -557,8 +557,8 @@ void CNode::Ban(const CSubNet& subNet, const BanReason &banReason, int64_t banti
     banEntry.banReason = banReason;
     if (bantimeoffset <= 0)
     {
-        //naelco time 24h->1h
-        bantimeoffset = GetArg("-bantime", 60*60*1); // Default 24-hour ban
+        //prot time 24h->6h
+        bantimeoffset = GetArg("-bantime", 60*60*6); // Default 24-hour ban
         sinceUnixEpoch = false;
     }
     banEntry.nBanUntil = (sinceUnixEpoch ? 0 : GetTime() )+bantimeoffset;
