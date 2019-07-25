@@ -146,51 +146,6 @@ public:
         //printf("hash : %s\n", hashGenesisBlock.ToString().c_str());
         //printf("merkle : %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-        assert(hashGenesisBlock        == uint256("0x000001717858ccee27e88eaf63912955ea6a833693813f897603ecebdfcb7c0a"));
-        assert(genesis.hashMerkleRoot  == uint256("0xce3ced2e976f54f3a2973db0f7d78879bd430406ed6b0bde8e01c0d659003257"));
-
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,  55);  // Start with 'P' from https://en.bitcoin.it/wiki/List_of_address_prefixes
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,  28);  // Start with 'C' from https://en.bitcoin.it/wiki/List_of_address_prefixes
-        base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1, 193);  // from https://en.bitcoin.it/wiki/List_of_address_prefixes
-        
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >(); // SecureCloud BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >(); // SecureCloud BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
-        base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x92)(0xf1).convert_to_container<std::vector<unsigned char> >(); // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md 109 	0x800092f1
-
-        vFixedSeeds.clear();
-        vSeeds.clear();
-
-        convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
-
-        vSeeds.push_back(CDNSSeedData("139.180.137.128", "207.148.76.228")); 
-        vSeeds.push_back(CDNSSeedData("139.180.128.151", "202.182.118.183")); 
-        vSeeds.push_back(CDNSSeedData("45.32.59.207", "45.32.38.151")); 
-        vSeeds.push_back(CDNSSeedData("dnsseed1.protblocks.com", "dnsseed2.protblocks.com")); 
-
-        /*
-        vSeeds.push_back(CDNSSeedData("seed02.protexchange.com", "seed02.protexchange.com"));
-        vSeeds.push_back(CDNSSeedData("seed03.protexchange.com", "seed03.protexchange.com"));
-        vSeeds.push_back(CDNSSeedData("seed04.protexchange.com", "seed04.protexchange.com"));
-        vSeeds.push_back(CDNSSeedData("explorer.protexchange.com", "explorer.protexchange.com"));
-         */
-
-        fMiningRequiresPeers           = true;
-        fAllowMinDifficultyBlocks      = false;
-        fDefaultConsistencyChecks      = false;
-        fRequireStandard               = true;
-        fMineBlocksOnDemand            = false;
-        fSkipProofOfWorkCheck          = false;
-        fTestnetToBeDeprecatedFieldRPC = false;
-        fHeadersFirstSyncingActive     = false;
-
-        nPoolMaxTransactions           = 3;
-        strSporkKey                    = "04a6065e38403a4f95bed7349cdf1a8f10c4f7193ce2f2ad08f8e94f208eb7dd60445bf9d8f34cf1bd51755301260c99ac21d5ea815fe2b4492dc17c41512db8cd";
-        strMasternodePoolDummyAddress  = "P9XPHRzTykFUNrHKmqd21YTGGA63zVUvwt";
-        nStartMasternodePayments       = genesis.nTime + 60 * 60; // 1 hr after genesis
-
-        nBudget_Fee_Confirmations      = 6; // Number of confirmations for the finalization fee
-
-        strTreasuryAddress             = "PFjnpBFhDTycYpHsGrjFzSJqzXnKMnewos";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
