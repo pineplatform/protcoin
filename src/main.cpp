@@ -1572,8 +1572,8 @@ int64_t GetBlockValue(int nHeight)
     /* block rewards. */
 
          if (nHeight >=       1 && nHeight <=       1) {nSubsidy = 12000000.00 * COIN;}
-    else if (nHeight >=       2 && nHeight <=   1000) {nSubsidy =       1.00 * COIN;}
-    else if (nHeight >=   1001 && nHeight <=  43299) {nSubsidy =        5.00 * COIN;}
+    else if (nHeight >=       2 && nHeight <=  1500) {nSubsidy =       1.00 * COIN;}
+    else if (nHeight >=  1501 && nHeight <=  43299) {nSubsidy =        5.00 * COIN;}
     else if (nHeight >=  43300 && nHeight <=  86499) {nSubsidy =        10.00 * COIN;}
     else if (nHeight >=  86500 && nHeight <=  129699) {nSubsidy =       15.00 * COIN;}
     else if (nHeight >= 129700 && nHeight <=  172899) {nSubsidy =       20.00 * COIN;}
@@ -1607,7 +1607,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
              if (nHeight >=      1 && nHeight <=      1) {nSubsidy = 0;}
-        else if (nHeight >=      2 && nHeight <=    500) {nSubsidy = 0;}
+        else if (nHeight >=      2 && nHeight <=   500) {nSubsidy = 0;}
         else if (nHeight >=    501 && nHeight <=   1000) {nSubsidy = blockValue * 0.62;}
         else if (nHeight >=   1001 && nHeight <=   2000) {nSubsidy = blockValue * 0.64;}
         else if (nHeight >=   2001 && nHeight <=   3000) {nSubsidy = blockValue * 0.66;}
@@ -1618,8 +1618,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return nSubsidy;
     }
 
-         if (nHeight >=       1 && nHeight <=   1000)  {nSubsidy = 0;}
-    else if (nHeight >=     1001 && nHeight <=  16804888)  {nSubsidy = blockValue * 0.80;}
+         if (nHeight >=       1 && nHeight <=   1500)  {nSubsidy = 0;}
+    else if (nHeight >=     1501 && nHeight <=  16804888)  {nSubsidy = blockValue * 0.80;}
 
     return nSubsidy;
 }
@@ -1630,7 +1630,7 @@ int64_t GetTreasuryPayment(int nHeight, int64_t blockValue)
         if (nHeight >= 501 )
             return blockValue * 0.1;
     } else {
-        if (nHeight >= 1001 )
+        if (nHeight >= 1501 )
             return blockValue * 0.1;
     }
 
